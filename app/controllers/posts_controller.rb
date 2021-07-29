@@ -9,7 +9,8 @@ class PostsController < ApplicationController
     Post.create(post_params)
     redirect_to new_post_path
   end
-  def blog_params
-    Post.create(params.require(:post).permit(:content))
+  private
+  def post_params
+    params.require(:post).permit(:content)
   end
 end
