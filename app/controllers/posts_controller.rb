@@ -5,5 +5,6 @@ class PostsController < ApplicationController
     @post = Post.new
   end
   def create
+    Post.create(params.require(:post).permit(:content))
   end
 end
