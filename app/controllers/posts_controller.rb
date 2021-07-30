@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     @post = Post.new
   end
   def create
-    @post = Post.create(post_params)
+    @post = Post.new(post_params)
     if params[:back]
       render :new
     else
@@ -33,6 +33,7 @@ class PostsController < ApplicationController
   end
   def confirm
     @post = Post.new(post_params)
+    render :new if @post.invalid?
   end
   private
   def post_params
