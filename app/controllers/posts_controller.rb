@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:edit, :update]
+  before_action :set_post, only: [:edit, :update, :destroy]
   def index
     @posts = Post.all
   end
@@ -22,6 +22,10 @@ class PostsController < ApplicationController
     else
       render :edit
     end
+  end
+  def destroy
+    @post.destroy
+    redirect_to posts_path, notice:"ブログを削除しました！"
   end
   private
   def post_params
