@@ -7,8 +7,8 @@
 <% @posts.each do |post| %>
   <tr>
     <td><%= post.content %></td>
-    <td><%= link_to "編集", edit_post_path(post.id), data: { confirm: '本当に編集していいですか？' } %></td>
-    <td><%= link_to "削除", post_path(post.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
+    <td><div class="alert alert-success" role="alert"><%= link_to "編集", edit_post_path(post.id), data: { confirm: '本当に編集していいですか？' } %></div></td>
+    <td><div class="alert alert-danger" role="alert"><%= link_to "削除", post_path(post.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></div></td>
   </tr>
 <% end %>
 </table>
