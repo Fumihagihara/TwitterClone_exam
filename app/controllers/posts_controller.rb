@@ -18,14 +18,14 @@ class PostsController < ApplicationController
   end
   def update
     if @post.update(post_params)
-      redirect_to posts_path, notice: "投稿内容を編集しました！"
+      redirect_to posts_path, notice: "編集しました！"
     else
       render :edit
     end
   end
   def destroy
     @post.destroy
-    redirect_to posts_path, notice:"ブログを削除しました！"
+    redirect_to posts_path, notice:"削除しました！"
   end
   private
   def post_params
