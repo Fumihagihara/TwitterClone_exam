@@ -1,3 +1,4 @@
+<header class="header">Tweety</header>
 <h3>以下の内容で投稿する？</h3>
 <%= form_with(model: @post, local: true) do |form| %>
   <%= form.hidden_field :content %>
@@ -5,3 +6,6 @@
   <%= form.submit  "投稿する" %>
   <%= form.submit "戻る", name: 'back' %>
 <% end %>
+<footer class="footer">
+  <p>Copyright © Hagi All RIGHTS RESERVED.</p>
+</footer>
