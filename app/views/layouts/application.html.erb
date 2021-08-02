@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Tweety</title>
+  <header class="header clearfix">
+    <h1>Tweety</h1>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-  <body>
-  <header class="header">Tweety</header>
-    <ul>
-      <li><a href="#">Tweety投稿</a></li>
-      <li><a href="#">トップページ</a></li>
+    <ul class="top_menu clearfix">
+      <li><a><%= link_to "投稿", new_post_path%></a></li>
+      <li><a><%= link_to "投稿一覧", posts_path%></a></li>
     </ul>
   </header>
+  <body>
+  <br>
+  <br>
   <%= yield %>
   <footer class="footer">
     <p>Copyright © Hagi All RIGHTS RESERVED.</p>
