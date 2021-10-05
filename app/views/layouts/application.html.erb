@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <header class="header clearfix">
-    <h1>Tweety</h1>
+    <head>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <ul class="top_menu clearfix">
-      <li><a><%= link_to "投稿", new_post_path%></a></li>
-      <li><a><%= link_to "投稿一覧", posts_path%></a></li>
-    </ul>
-  </header>
+    </head>
+
   <body>
-  <br>
-  <br>
-  <%= yield %>
+    <header class="header clearfix">
+      <h1 class="logo">Tweety</h1>
+      <ul class="top_menu clearfix">
+        <li><%= link_to "投稿", new_post_path, class: "list" %></li>
+        <li><%= link_to "投稿一覧", posts_path, class: "list" %></li>
+      </ul>
+    </header>
+
+  <div class="container">
+    <%= yield %>
+  </div>
   <footer class="footer">
     <p>Copyright © Hagi All RIGHTS RESERVED.</p>
   </footer>
   </body>
-</html>    <%= csp_meta_tag %>
+</html>    <%#= csp_meta_tag %>
